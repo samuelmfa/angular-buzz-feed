@@ -1,5 +1,16 @@
 <main class="container mx-auto h-screen">
   <section>
-
+    <app-page-tittle></app-page-tittle>
   </section>
+
+  @if (!fim) {
+  <section>
+    <app-card-selection
+      [dados]="dataCard"
+      (resposta)="nextQuestion($event)"
+    ></app-card-selection>
+  </section>
+  }@else {
+  <app-card-result [result]="resultado"> </app-card-result>
+  }
 </main>
